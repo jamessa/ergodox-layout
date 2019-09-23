@@ -9,11 +9,21 @@ This is my Ergodox keyboard layout experiment to serve my daily Pinyin typing, M
 To simplify the workflow, I use this seperate repo for the layout. A quick way to use it.
 
 ```
-$ git clone clone https://github.com/qmk/qmk_firmware.git
+$ git clone --recurse-submodules https://github.com/qmk/qmk_firmware.git
 $ cd qmk_firmware
 $ git clone https://github.com/jamessa/ergodox-layout.git layouts/community/ergodox/jsa
 $ make ergodox_ez:jsa
 ```shell
+```
+
+# key logger
+
+To learn how you really type, you should enable your key logger.
+
+```
+export OS=DARWIN
+cd hid_listen
+make
 ```
 
 Level1

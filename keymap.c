@@ -1,14 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
-#include "keymap_german.h"
-#include "keymap_nordic.h"
-#include "keymap_french.h"
-#include "keymap_spanish.h"
-#include "keymap_hungarian.h"
-#include "keymap_swedish.h"
-#include "keymap_br_abnt2.h"
-#include "keymap_canadian_multilingual.h"
-#include "keymap_german_ch.h"
+#include "print.h"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define KC_MAC_CUT LGUI(KC_X)
@@ -22,7 +14,6 @@
 #define NO_ETH ALGR(KC_D)
 
 enum custom_keycodes {
-  RGB_SLD = EZ_SAFE_RANGE,
   EPRM,
 };
 
@@ -43,6 +34,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
   }
+  uint8_t layer = biton32(layer_state);
+  uprintf ("KL: col=%02d, row=%02d, pressed=%d, layer=%d\n",
+    record->event.key.col,
+    record->event.key.row,
+    record->event.pressed,
+    layer);
   return true;
 }
 
