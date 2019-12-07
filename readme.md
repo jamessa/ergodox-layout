@@ -22,7 +22,7 @@ or
 .
 ├── ErgodoxLayout
 └── QMK
-$ ln -s QMK/layouts/community/ergodox/jsa ~/Projects/ErgodoxLayout
+$ ln -s ~/Projects/ErgodoxLayout QMK/layouts/community/ergodox/jsa
 ```
 
 I found this is easier for development.
@@ -75,4 +75,3 @@ teensy_loader_cli -mmcu=atmega32u4 -w -v ergodox_ez_beginner_QzP5B.hex
 				strftime(big_buf, 80, "%H:%M:%S.", info);
 				sprintf(big_buf+10, "%d ", tv.tv_usec);
 ```
-
